@@ -1,0 +1,175 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --brand: #FD0000;
+  --navbar-height: 5rem;
+  --max-width: 1200px;
+  --antd-font: var(--font-poppins), 'Poppins', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+
+
+/* Ant Design Font Overrides - Comprehensive */
+.ant-btn,
+.ant-btn-text,
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-select,
+.ant-select-selector,
+.ant-select-selection-item,
+.ant-select-selection-placeholder,
+.ant-table,
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td,
+.ant-card,
+.ant-card-head-title,
+.ant-card-body,
+.ant-statistic,
+.ant-statistic-title,
+.ant-statistic-content,
+.ant-tag,
+.ant-message,
+.ant-notification,
+.ant-modal,
+.ant-modal-title,
+.ant-modal-body,
+.ant-modal-footer,
+.ant-pagination,
+.ant-pagination-item,
+.ant-pagination-prev,
+.ant-pagination-next,
+.ant-pagination-jump-prev,
+.ant-pagination-jump-next,
+.ant-form,
+.ant-form-item,
+.ant-form-item-label,
+.ant-form-item-control,
+.ant-form-item-explain,
+.ant-tabs,
+.ant-tabs-tab,
+.ant-tabs-content,
+.ant-upload,
+.ant-upload-list,
+.ant-upload-list-item,
+.ant-upload-list-item-name,
+.ant-date-picker,
+.ant-picker,
+.ant-picker-input,
+.ant-picker-input > input,
+.ant-row,
+.ant-modal-content,
+.ant-col {
+  font-family: var(--antd-font) !important;
+}
+body {
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure Poppins font is available for all elements */
+* {
+  font-family: inherit;
+}
+
+/* Global Ant Design Font Override - Catch All */
+*[class*="ant-"],
+.ant-*,
+[class^="ant-"],
+[class*=" ant-"] {
+  font-family: var(--antd-font) !important;
+}
+
+/* Force override for Ant Design CSS-in-JS */
+html body [class*="ant-"] {
+  font-family: var(--antd-font) !important;
+}
+
+/* Override the specific CSS-in-JS class you saw in dev tools */
+:where(.css-dev-only-do-not-override-1v28nim) [class^="ant-"],
+:where(.css-dev-only-do-not-override-1v28nim)[class*=" ant-"] {
+  font-family: var(--antd-font) !important;
+}
+
+/* Nuclear option - override everything with Ant classes */
+html body div [class*="ant-"] {
+  font-family: var(--antd-font) !important;
+}
+
+/* Ultimate override - target the exact CSS-in-JS specificity */
+:where(.css-dev-only-do-not-override-1v28nim) [class^="ant-modal"],
+:where(.css-dev-only-do-not-override-1v28nim)[class*=" ant-modal"],
+:where(.css-dev-only-do-not-override-1v28nim) [class^="ant-btn"],
+:where(.css-dev-only-do-not-override-1v28nim)[class*=" ant-btn"],
+:where(.css-dev-only-do-not-override-1v28nim) [class^="ant-input"],
+:where(.css-dev-only-do-not-override-1v28nim)[class*=" ant-input"],
+:where(.css-dev-only-do-not-override-1v28nim) [class^="ant-select"],
+:where(.css-dev-only-do-not-override-1v28nim)[class*=" ant-select"] {
+  font-family: var(--antd-font) !important;
+}
+
+/* Additional specific overrides for common components */
+.ant-typography,
+.ant-typography p,
+.ant-typography h1,
+.ant-typography h2,
+.ant-typography h3,
+.ant-typography h4,
+.ant-typography h5,
+.ant-typography h6,
+.ant-tooltip,
+.ant-tooltip-inner,
+.ant-popover,
+.ant-popover-inner,
+.ant-popover-title,
+.ant-popover-content,
+.ant-dropdown,
+.ant-dropdown-menu,
+.ant-dropdown-menu-item,
+.ant-menu,
+.ant-menu-item,
+.ant-menu-submenu,
+.ant-menu-submenu-title {
+  font-family: var(--antd-font) !important;
+}
+
+/* Modal scroll prevention */
+body.modal-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+}
+
+main {
+  /* padding-top: var(--navbar-height); */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    /* color-scheme: dark; */
+  }
+}
