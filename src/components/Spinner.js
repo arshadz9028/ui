@@ -6,7 +6,7 @@ export default function Spinner() {
           width: "40px",
           height: "40px",
           border: "4px solid #f3f3f3",
-          borderTop: "4px solid #333",
+          borderTop: "4px solid #16a085",
           borderRadius: "50%",
           animation: "spin 1s linear infinite"
         }}

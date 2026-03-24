@@ -5,7 +5,6 @@
 
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
-
   display: grid;
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
@@ -162,4 +161,178 @@ a.secondary {
   .logo {
     filter: invert();
   }
+}
+
+/* New turquoise-themed styles for the search UI */
+
+.container {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--turquoise-700);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 15px 18px;
+  padding-right: 48px;
+  font-size: 17px;
+  border-radius: 30px;
+  border: 1px solid rgba(22,160,133,0.15);
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(16,128,120,0.05);
+  box-sizing: border-box;
+  outline: none;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
+}
+
+.searchWrapper {
+  position: relative;
+}
+
+.searchClearButton {
+  position: absolute;
+  right: 12px;
+  top: 44%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--turquoise-700);
+  cursor: pointer;
+  font-size: 20px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchClearButton:hover {
+  color: var(--turquoise-500);
+}
+
+.searchInput:focus {
+  border-color: var(--turquoise-500);
+  box-shadow: 0 6px 20px rgba(22,160,133,0.12);
+  transform: translateY(-1px);
+}
+
+.infoText {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.resultsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resultCard {
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(20,160,140,0.08);
+  background: linear-gradient(180deg, var(--turquoise-50), #fafafa);
+  box-shadow: 0 6px 18px rgba(16,128,120,0.06);
+  transition: box-shadow 0.18s ease, transform 0.12s ease;
+  position: relative;
+}
+
+.resultCard:hover {
+  box-shadow: 0 10px 26px rgba(16,128,120,0.12);
+  transform: translateY(-4px);
+}
+
+.resultRow {
+  margin-bottom: 8px;
+  color: #23302f;
+}
+
+.copyButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: var(--turquoise-700);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 1;
+  z-index: 2;
+}
+
+.copyButton:hover {
+  color: var(--turquoise-500);
+}
+
+.copiedBadge {
+  position: absolute;
+  top: 10px;
+  right: 44px;
+  background: rgba(17,128,111,0.95);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.fieldLabel {
+  font-weight: 600;
+  color: #0f3f3a;
+  margin-right: 6px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  gap: 10px;
+  align-items: center;
+}
+
+.buttonPrimary {
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 15px;
+  background: var(--turquoise-700);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.12s ease;
+  font-weight: 500;
+}
+
+.buttonPrimary:hover:not(:disabled) {
+  background: var(--turquoise-500);
+}
+
+.buttonDisabled {
+  background: #ddd;
+  color: #777;
+  cursor: default;
+}
+
+.noResults {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #fff8f7;
+  border: 1px solid rgba(200,200,200,0.25);
+  color: #5b6b69;
+}
+
+.emphasis {
+  color: var(--turquoise-700);
+  font-weight: 600;
 }
