@@ -16,7 +16,7 @@ export default function HomePage() {
 
   const { data, isLoading } = useSWR(
     query.length > 1
-      ? `/api/search?q=${query}&page=${page}&limit=${limit}`
+      ? `/api/newSearch?q=${query}&page=${page}&limit=${limit}`
       : null,
     fetcher
   );
@@ -25,6 +25,7 @@ export default function HomePage() {
   const total = data?.total || 0;
   const totalPages = Math.ceil(total / limit);
   const inputRef = useRef(null);
+  console.log("Search results:", results);
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Voter Search</h2>
@@ -86,7 +87,7 @@ export default function HomePage() {
               aria-label="Copy result"
               className={styles.copyButton}
               onClick={async () => {
-                const text = `Name: ${item.name_original}\nFather/Husband: ${item.father_or_husband_original}\nVoter ID: ${item.voter_id}\nAddress: ${item.address_original}\nWard: ${item.ward}\nPage: ${item.page}\nFile: ${item.file_name}\nSource line: ${item._raw_line}`;
+                const text = `Name: ${item.name}\nRelative: ${item.relative}\nRelation: ${item.relation}\nEPIC: ${item.epic}\nHouse: ${item.house}\nAge: ${item.age}\nGender: ${item.gender}\nSr: ${item.sr}\nPage: ${item._page}\nFile: ${item._file}\nRaw Line: ${item._raw_line}`;
                 try {
                   await navigator.clipboard.writeText(text);
                   setCopiedId(item._id);
@@ -99,14 +100,16 @@ export default function HomePage() {
               <IoCopy />
             </button>
 
-            <div className={styles.resultRow}><span className={styles.fieldLabel}>Name:</span> {item.name_original}</div>
-            <div className={styles.resultRow}><span className={styles.fieldLabel}>Father/Husband:</span> {item.father_or_husband_original}</div>
-            <div className={styles.resultRow}><span className={styles.fieldLabel}>Voter ID:</span> {item.voter_id}</div>
-            <div className={styles.resultRow}><span className={styles.fieldLabel}>Address:</span> {item.address_original}</div>
-            <div className={styles.resultRow}><span className={styles.fieldLabel}>Ward:</span> {item.ward}</div>
-            <div className={styles.resultRow}><span className={styles.fieldLabel}>Page:</span> {item.page}</div>
-            <div className={styles.resultRow}><span className={styles.fieldLabel}>File:</span> {item.file_name}</div>
-            <div className={styles.resultRow}><span className={styles.fieldLabel}>Source line:</span> {item._raw_line}</div>
+            <div className={styles.resultRow}><span className={styles.fieldLabel}>Name:</span> {item.name}</div>
+            <div className={styles.resultRow}><span className={styles.fieldLabel}>Relative:</span> {item.relative}</div>
+            <div className={styles.resultRow}><span className={styles.fieldLabel}>Relation:</span> {item.relation}</div>
+            <div className={styles.resultRow}><span className={styles.fieldLabel}>EPIC:</span> {item.epic}</div>
+            <div className={styles.resultRow}><span className={styles.fieldLabel}>House:</span> {item.house}</div>
+            <div className={styles.resultRow}><span className={styles.fieldLabel}>Age:</span> {item.age}</div>
+            <div className={styles.resultRow}><span className={styles.fieldLabel}>Gender:</span> {item.gender}</div>
+            <div className={styles.resultRow}><span className={styles.fieldLabel}>Sr:</span> {item.sr}</div>
+            <div className={styles.resultRow}><span className={styles.fieldLabel}>Page:</span> {item._page}</div>
+            <div className={styles.resultRow}><span className={styles.fieldLabel}>File:</span> {item._file}</div>
           </div>
         ))}
       </div>

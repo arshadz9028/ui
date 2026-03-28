@@ -1,6 +1,6 @@
 import mongoose, { Schema, model, models } from "mongoose";
 
-const YadiSchema = new Schema(
+const newYadiSchema = new Schema(
   {
     sr: String,
     house: String,
@@ -17,7 +17,7 @@ const YadiSchema = new Schema(
 );
 
 // ⚡ IMPORTANT: Add indexes for FAST search
-YadiSchema.index({
+newYadiSchema.index({
   epic: "text",
   house: "text",
   name: "text",
@@ -26,6 +26,6 @@ YadiSchema.index({
 });
 
 // CORRECT MODEL DEFINITION
-const Yadi = models.Yadi || model("Yadi", YadiSchema);
+const newYadi = models.newYadi || model("newYadi", newYadiSchema);
 
-export default Yadi;
+export default newYadi;
