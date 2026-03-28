@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import Yadi from "../../../models/Yadi";
+import Yadi from "../../../models/yadi";
 import { connectDB } from "../../../database/conn";
 export async function GET(req) {
   try {
